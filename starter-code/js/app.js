@@ -13,13 +13,15 @@ Cart.prototype.addItem = function(product, quantity) {
 };
 
 Cart.prototype.saveToLocalStorage = function() {
-  // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  // DONE: Fill in this instance method to save the contents of the cart to localStorage
+  const stringifiedObject = JSON.stringify(this.items);
+  localStorage.setItem('item', stringifiedObject);
 };
 
 Cart.prototype.removeItem = function(item) {
-  // TODO: Fill in this instance method to remove one item from the cart.
-  // Note: You will have to decide what kind of parameter to pass in here!
-  // 'please learn the splice method because you will need it'
+  console.log(this.item);
+  this.item.splice(i, 1);// come back and make sure "i" is what we want.
+  console.log(this.item);
 };
 
 const CartItem = function(product, quantity) {
@@ -55,6 +57,7 @@ function generateCatalog() {
   new Product('assets/unicorn.jpg', 'Unicorn');
   new Product('assets/water-can.jpg', 'Water Can');
   new Product('assets/wine-glass.jpg', 'Wine Glass');
+  console.log(Product.allProducts);
 }
 
 // Initialize the app by creating the big list of products with images and names
